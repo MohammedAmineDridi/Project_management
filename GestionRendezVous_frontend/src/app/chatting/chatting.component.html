@@ -1,0 +1,36 @@
+
+<!-- Main Body -->
+<section >
+  <div class="container" >
+      <div class="row">
+
+          <div class="col-sm-5 col-md-6 col-12 pb-4" id="ex1">
+
+            <div *ngFor="let comment of comments_user">
+
+                <div class="comment mt-4 text-justify float-left"> <img src="../../assets/template/img/users/{{comment.photo}}" alt="" class="rounded-circle" width="40" height="40">
+                    &nbsp; &nbsp;<h4>{{ comment.nom }}</h4> &nbsp; <span> {{comment.time}} - {{ comment.date }} </span> <br>
+                      <p>{{comment.message}}</p>
+                  </div>
+
+            </div>
+              
+          </div>
+
+          <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+              <form id="algin-form" #f="ngForm" >
+                  <div class="form-group">
+                      <h4>Leave a comment</h4> <label for="message">Message</label> <textarea name="message" #msg="ngModel" id="message" msg cols="30" rows="5" class="form-control" style="background-color: black;" ngModel required></textarea>
+                  </div>
+                  <div class="form-group"> <label for="name">Name</label> <input type="text" #nom="ngModel" name="nom" id="nom" class="form-control" value={{nom_user}} readonly ngModel required> </div>
+                  <div class="form-group"> <label for="email">Email</label> <input type="text" #mail="ngModel" name="mail" id="mail" class="form-control" value="{{mail_user}}" readonly ngModel required > </div>
+                  
+                 
+                  <div class="form-group"> <button type="button" id="post" class="btn" (click)="add_comment(f)" >Post Comment</button> </div>
+              </form>
+          </div>
+
+      </div>
+  </div>
+</section>
+

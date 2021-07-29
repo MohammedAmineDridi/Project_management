@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+      <div class="col-3">
+        <form #f="ngForm" >
+
+            <div class="row">
+            <label for="fname" style="color:#3f51b5;">Event name:</label><br>
+            <input type="text" id="ename" name="nom" ngModel required ><br><br>
+        </div>
+
+        <br>
+        
+                    <div class="row">
+                        <label for="lname" style="color:#3f51b5;">Start time:</label><br>
+                        <input type="datetime-local" class="start_date" name="start_date" ngModel required >
+                    </div>
+
+                    <br>
+                    <br>
+                
+                 <div class="row">
+                        <label for="lname" style="color:#3f51b5;">End time:</label><br>
+                    <input type="datetime-local" class="end_date" name="end_date" ngModel required >
+                </div>
+
+                    <br>
+                    <br>
+                    
+      
+            <div class="row">
+                <div class="span4 text-left"> <button (click)="addEvent(f)" type="button" class="btn btn-outline-primary" >Add</button> </div>&nbsp;
+                <div class="span4 text-center"><button (click)="editEvent(f)" type="button" class="btn btn-outline-warning">Edit</button> </div>&nbsp;
+                <div class="span4 text-right"> <button (click)="deleteEvent(f)" type="button" class="btn btn-outline-danger">Delete</button> </div>
+              </div>
+          </form> 
+
+
+      </div>
+
+
+      <div class="col-9">
+
+        
+         <ejs-schedule #scheduleObj (popupOpen)="onPopupOpen($event)" width="100%" height="520px" [selectedDate]="selectedDate" [eventSettings]="eventSettings" [views]="scheduleViews">
+          
+
+         </ejs-schedule>
+
+       
+      </div>
+
+      </div>
+
+      </div>
+
+
+
+      <script
+      src='https://code.jquery.com/jquery-3.3.1.js'
+      integrity='sha256–2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='
+      crossorigin=”anonymous”>
+      </script>
+

@@ -1,0 +1,82 @@
+
+
+    <a class="btn" href="https://amine-hq.daily.co/hello-daily"><i class="fa fa-camera"></i> join the meet </a>
+
+<!-- users connected -->
+
+<!-- webrtc camera meeting api -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+
+            <div class="well">
+                <div class="icon">
+               <div class="camera1"><span></span></div>
+             </div>
+
+
+</div>
+
+
+
+
+<div class="col-sm">
+            <div class="login-box">
+                <div class="login-snip"> <input (click)="chat_room()" id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Chat Room</label> <input id="tab-2" type="radio" (click)="list_participants()" name="tab" class="sign-up"><label for="tab-2" class="tab">List participants</label>
+                   
+                    <!-- chat room part -->
+                    <div class="login-space">
+                        <div class="container" id="login_div" >
+                               
+                           <!-- 2 ngfor simulatné-->
+                           <br>
+                           <br>
+                        <div style="color: black;" *ngFor="let message_username of usernames_messages_list">
+                            
+                                {{ message_username }}
+                              </div>
+                            <br>
+                            <br>
+                            <br>
+                              <div>
+
+                                <div style="overflow: hidden; padding-right: .5em;">
+                                <input type="text" id="msg_text" name="msg_send" class="form-control"  aria-describedby="msg" placeholder="Enter your message ...">
+                                   
+
+                                <button style="float: right" (click)="sendmsg()" class="btn" id="btn_msg"><i class="fa fa-paper-plane" aria-hidden="true"> send message </i></button>
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <!-- list of participants part -->
+
+                        <div class="sign-up-form">
+                            <br> 
+                            <div *ngFor="let user of username_photo">
+
+                                <img id="element2" src="../../assets/template/img/users/{{user[1]}}" alt="Admin" class="rounded-circle" width="80">
+                            
+                                &nbsp;&nbsp;
+                                <h3  id="element1" >{{ user[0] }} </h3>
+                            
+                                <br>
+                            <br>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
