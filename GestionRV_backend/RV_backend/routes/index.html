@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:4444/api/insert_user' 
+      method='post' 
+      encType="multipart/form-data">
+
+      <input type="text" name="nom" placeholder="ecrire nom .." />
+
+      <input type="text" name="prenom" placeholder="ecrire prenom .." />
+
+      <input type="text" name="email" placeholder="ecrire email .." />
+
+      <input type="text" name="password" placeholder="ecrire password .." />
+
+        <input id="2" type="file" name="pic" />
+        
+        <input  type='submit' value='Upload!' onclick="func()" />
+    </form>     
+  </body>
+
+  <script>
+
+function func(){
+  alert(document.getElementById("2").value  );
+}
+
+  </script>
+</html>
